@@ -9,6 +9,10 @@ parser.add_argument("-v", "--verbose", action="store_true", help="The verbose") 
 parser.add_argument("-m", "--multiple", type=int, choices=[0, 1, 2], help="Number of multiplier")
 # Sample of count
 parser.add_argument("-c", "--count", action="count", help="Number of count")
+# Sample of two command exclusive
+group = parser.add_mutually_exclusive_group()
+group.add_argument("-a", "--apple", action="store_true")
+group.add_argument("-ss", "--samsung", action="store_true")
 
 # argSample.py square
 args = parser.parse_args()
